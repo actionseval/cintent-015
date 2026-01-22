@@ -27,13 +27,13 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    # CINTENT >> INSERT_CINTENT
-    - uses: JavidDitty/setup-cintent@23f433fdb37d0a420804269a89ed1940368546fe
-
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
+
+    # CINTENT >> INSERT_CINTENT
+    - uses: JavidDitty/setup-cintent@23f433fdb37d0a420804269a89ed1940368546fe
 
     - name: Update OS, pip & install custom dependencies
       run: |
