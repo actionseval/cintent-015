@@ -22,13 +22,13 @@ jobs:
       matrix:
         # CINTENT >> REMOVE_MATRIX
         # python-version: [3.9, 3.10.6]
-        python-version: [3.11]
+        python-version: [3.10.6]
 
     steps:
     - uses: actions/checkout@v4
 
     # CINTENT >> INSERT_CINTENT
-    - uses: JavidDitty/setup-cintent@a606c80c34ec190c6a20dea33d6d58ddb6c4e0cc
+    - uses: JavidDitty/setup-cintent@23f433fdb37d0a420804269a89ed1940368546fe
 
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
@@ -57,7 +57,7 @@ jobs:
       run: |
         set +e
         xvfb-run coverage run --branch --source=bcipy -m pytest --mpl -k "not slow"
-        if [ $? -eq 0 ]
+        if [ $? -eq 0 ]b
         then 
           echo "Ubuntu run complete!"
         elif [ $? -eq 134 ]
