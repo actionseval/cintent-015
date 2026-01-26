@@ -31,9 +31,9 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
-
+        
     # CINTENT >> INSERT_CINTENT
-    - uses: JavidDitty/setup-cintent@23f433fdb37d0a420804269a89ed1940368546fe
+    - uses: JavidDitty/setup-cintent@79d20aaa5fcb487e57e09d40e7b3b62fd53417e8
 
     - name: Update OS, pip & install custom dependencies
       run: |
